@@ -1,0 +1,375 @@
+/* ============================================================
+   PROJETO: ANTONIA PLANTAS - DESIGN DARK LUX (PREMIUM)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400;700&display=swap');
+
+:root {
+    --bg-black: #0a0a0a;
+    --bg-card: #141414;
+    --accent-red: #8B0000;
+    --gold: #C5A059;
+    --white: #ffffff;
+    --text-muted: #a0a0a0;
+    --font-titles: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-black);
+    color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Header Glassmorphism */
+header {
+    padding: 25px 8%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+}
+
+.logo {
+    font-family: var(--font-titles);
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.logo span { color: var(--accent-red); }
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover { color: var(--gold); }
+
+/* Hero Section Dark */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(10, 10, 10, 0.9)),
+                url('fundofloralf.jpg') center/cover no-repeat fixed;
+}
+
+.hero-text h1 {
+    font-family: var(--font-titles);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero-text::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: var(--gold);
+    margin: 30px auto;
+}
+
+.hero-text p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+}
+
+/* Botão Gold Ghost */
+.btn-cta {
+    display: inline-block;
+    padding: 15px 45px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.4s ease;
+}
+
+.btn-cta:hover {
+    background: var(--gold);
+    color: var(--bg-black);
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+}
+
+/* Seção Vitrine */
+.container {
+    padding: 120px 10%;
+    text-align: center;
+}
+
+h2 {
+    font-family: var(--font-titles);
+    font-size: 2rem;
+    letter-spacing: 6px;
+    margin-bottom: 60px;
+    color: var(--white);
+}
+
+.vitrine {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid #222;
+    transition: 0.5s;
+}
+
+.card:hover { border-color: var(--gold); }
+
+.card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: 0.6s;
+}
+
+.card:hover img { filter: brightness(1); }
+
+.card-content p {
+    padding: 0 15px 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.card h3 {
+    margin-top: 25px;
+    padding: 0 15px 20px;
+    font-family: var(--font-titles);
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+/* Formulário Dark Lux */
+#contato {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 120px;
+}
+
+form { display: flex; flex-direction: column; gap: 20px; }
+
+input, textarea {
+    width: 100%;
+    padding: 15px 5px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    color: var(--white);
+    font-family: var(--font-body);
+    margin-bottom: 20px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus { border-bottom-color: var(--gold); }
+
+.btn-submit {
+    padding: 20px;
+    background: var(--accent-red);
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn-submit:hover { background: #5e0018; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3); }
+
+/* Footer */
+footer {
+    padding: 60px 10%;
+    text-align: center;
+    background: #050505;
+    border-top: 1px solid #111;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Botão WhatsApp */
+.whatsapp-fixed {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.whatsapp-fixed img {
+    width: 32px;
+    height: 32px;
+}
+
+/* ============================================================
+   CORREÇÃO iOS: background-attachment fixed quebra no Safari
+   ============================================================ */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        background-attachment: scroll;
+    }
+}
+
+/* ============================================================
+   RESPONSIVIDADE MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* Header: empilha logo e nav, deixa de ser fixed
+       para não cobrir o conteúdo hero */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 18px 5%;
+        gap: 12px;
+        position: relative;
+    }
+
+    /* Nav: quebra linha se necessário e centraliza */
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 18px;
+        margin-top: 0;
+    }
+
+    nav ul li a {
+        font-size: 0.7rem;
+        letter-spacing: 1.5px;
+    }
+
+    /* Hero: altura automática, padding lateral generoso,
+       remove fixed (bug iOS) */
+    .hero {
+        height: auto;
+        min-height: 100svh;
+        padding: 60px 6% 80px;
+        background-attachment: scroll;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(1.3rem, 6vw, 2rem);
+        letter-spacing: 4px;
+    }
+
+    .hero-text p {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+
+    .btn-cta {
+        padding: 13px 32px;
+        font-size: 0.72rem;
+    }
+
+    /* Sections: padding menor no mobile */
+    .container {
+        padding: 60px 6%;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        letter-spacing: 4px;
+        margin-bottom: 40px;
+    }
+
+    /* Vitrine: uma coluna, imagens menores */
+    .vitrine {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .card img {
+        height: 300px;
+    }
+
+    /* Formulário: padding inferior menor */
+    #contato {
+        padding-bottom: 60px;
+    }
+
+    /* WhatsApp: tamanho menor */
+    .whatsapp-fixed {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .whatsapp-fixed img {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+/* Telas muito pequenas (320px–375px) */
+@media (max-width: 375px) {
+    .logo {
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+
+    nav ul li a {
+        font-size: 0.65rem;
+    }
+
+    .hero-text h1 {
+        letter-spacing: 2px;
+    }
+
+    .card img {
+        height: 250px;
+    }
+}
